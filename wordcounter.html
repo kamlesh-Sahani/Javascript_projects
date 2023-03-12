@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: blueviolet;
+
+        }
+
+        h1 {
+            font-size: large;
+            font-family: 'Courier New', Courier, monospace;
+            padding-top: 20px;
+            margin-left: 48px;
+        }
+
+        .container {
+            margin: auto;
+            background-color: #ffffff;
+            height: 450px;
+            width: 400px;
+            margin-top: 20px;
+            border-radius: 20px;
+            box-shadow: 10px 11px 50px 10px;
+        }
+
+        .area {
+            padding-top: 30px;
+            padding-left: 16px;
+        }
+
+        .area textarea {
+            border-radius: 6px;
+            width: 350px;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 10px;
+            font-size: 13PX;
+            border: none;
+            text-transform: capitalize;
+
+
+
+        }
+
+        .result{
+           background-color: black;
+           width: 350px;
+           height: 90px;
+           margin-left: 25px;
+           margin-top: 17px;
+           border-radius: 9px;
+           box-shadow: 2px 6px 20px 5px rgb(0, 0, 0);
+            
+
+        }
+        .value{
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            margin-right: 60px;
+            margin-left: 20px;
+
+ 
+
+        }
+
+        .name{
+            color: rgb(124, 118, 118);
+            display: flex;
+            justify-content: space-between;
+            margin-right: 50px;
+            margin-left: 60px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Word or Character counter </h1>
+        <div class="area"><textarea name="" id="kam" cols="48" rows="20" placeholder="Enter the words ....." oninput="fun()"></textarea>
+        </div>
+        <div class="result">
+        <div class="value">
+            <h1 id="wor">000</h1>
+            <h1 id="chara">000</h1>
+        </div>
+        <div class="name">
+            <span>Words</span>
+            <span>Character</span>
+        </div>
+        </div>
+
+    </div>
+ <h1 id="ran"></h1>
+
+    <script>
+
+       var total=[];
+       function fun(){
+        var total =document.getElementById('kam').value
+        document.getElementById('chara').innerHTML=total.length
+       
+       var wor =total.split(' ');
+       var words =wor.filter(function(num){
+return num!="";
+       })
+       
+     document.getElementById('wor').innerHTML=words.length;
+ 
+       }
+
+   
+    </script>
+</body>
+
+</html>
