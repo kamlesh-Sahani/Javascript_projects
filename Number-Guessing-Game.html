@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <!--gusser game -->
+      <script>
+
+        var num =  parseInt( Math.random()*10)
+        console.log("number is ",num)
+        var user=parseInt(window.prompt("enetar a number ","between the 1 to 10"))
+        fun(user,num);
+
+        function fun(user,num){
+         if(user==num){
+            window.alert("wow !... win ")
+            document.body.style.backgroundImage="url('https://www.bing.com/images/search?view=detailV2&ccid=cVFl%2fz9q&id=3F7B14E3CF466321B8AE7D34AA0EB33ABF9CAA2D&thid=OIP.cVFl_z9qzDP4O6FPNHEzeAHaE7&mediaurl=https%3a%2f%2fimage.freepik.com%2ffree-vector%2fyou-win-blue-comic-illustration_185004-28.jpg&exph=417&expw=626&q=you+win+&simid=608013738601634034&FORM=IRPRST&ck=65944910296F05AC6EF0271AE6B8C827&selectedIndex=16&ajaxhist=0&ajaxserp=0')"
+         }
+         else if(user>num){
+            window.alert("type small number ")
+            var user = window.prompt("enter a number again")
+            fun(user,num);
+         }
+         else if(user<num){
+            window.alert("type large number")
+            var user= window.prompt("enter a number again")
+            fun(user,num);
+         }
+        }
+      </script>
+</body>
+</html>
