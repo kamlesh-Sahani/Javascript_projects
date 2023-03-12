@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right, rgb(128, 177, 218), rgb(220, 164, 233));
+      text-transform: capitalize;
+      background-color: rgb(27, 7, 44);
+
+
+    }
+
+    .container {
+      background-color: rgb(69, 13, 95);
+      background-image: linear-gradient(to right, rgb(94, 4, 114), rgb(0, 53, 97));
+      height: 100px;
+      width: 500px;
+      margin: auto;
+      margin-top: 30vh;
+      box-shadow: 1px 2px 60px 5px rgb(14, 14, 14);
+      border-radius: 100px 100px 100px 100px;
+    }
+
+    .box {
+      padding-top: 30px;
+      padding-left: 20px;
+
+
+    }
+
+    .container .box span {
+      font-family: sans-serif;
+      margin-left: 68px;
+      font-size: x-large;
+
+
+
+
+
+    }
+
+    .box span:first-child {
+      color: rgb(255, 18, 10);
+    }
+
+    .box span:nth-child(3) {
+      color: rgb(255, 18, 10);
+    }
+
+    .box span:nth-child(2) {
+      color: chartreuse;
+    }
+
+    .box span:last-child {
+      color: chartreuse;
+    }
+
+    .foot {
+      padding-left: 29px;
+      margin-top: 15px;
+    }
+
+    .foot span {
+      color: rgb(0, 0, 0);
+      margin-left: 75px;
+      font-size: small;
+    }
+
+    .sec {
+      background-color: rgb(177, 167, 167);
+      height: 100px;
+      width: 100px;
+      margin: auto;
+      margin-top: 50px;
+      border-radius: 100px;
+      box-shadow: 2px 2px 40px 10px rgb(0, 0, 0);
+    }
+
+    .sec h1{
+      padding-top: 30px;
+      color: rgb(0, 0, 0);
+      font-size: x-large;
+      font-family: Arial;
+      margin-left: 30px;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg">
+    <div class="container">
+      <div class="box">
+        <span id="dy"> </span>
+        <span id="h">00</span>
+        <span id="m">00</span>
+        <span id="s">00</span>
+
+      </div>
+      <div class="foot">
+        <span>day</span>
+        <span>hou</span>
+        <span>min</span>
+        <span>sec</span>
+      </div>
+    </div>
+    <div class="sec">
+      <h1 id="ms">00</h1>
+    </div>
+  </div>
+  <script>
+
+    function box() {
+      var a = new Date()
+      switch (a.getDay()) {
+        case 0:
+          day = "Sun"
+          break;
+
+        case 1:
+          day = "Mon"
+          break;
+
+        case 2:
+          day = "tue"
+          break;
+
+        case 3:
+          day = "wed"
+          break;
+
+        case 4:
+          day = "thu"
+          break;
+
+        case 5:
+          day = "fri"
+          break;
+
+        case 6:
+          day = "Sat"
+
+      }
+      var h = a.getHours()
+
+
+
+
+      if (h > 12) {
+        h = h - 12;
+      }
+      document.getElementById('dy').innerHTML = day
+      document.getElementById('h').innerHTML = h
+      document.getElementById('m').innerHTML = a.getMinutes()
+      document.getElementById('s').innerHTML = a.getSeconds()
+      document.getElementById('ms').innerHTML = a.getMilliseconds()
+
+
+    }
+    setInterval(box, 1);
+
+
+    
+  </script>
+
+</body>
+
+</html>
