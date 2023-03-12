@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        .container{
+            background-color: black;
+            height: 350px ;
+            width: 300px;
+            margin-top: 20vh;
+            margin-left: 40vw;
+            border-radius: 20px;
+            box-shadow: 2px 2px 90px 10px rgb(0, 0, 0);
+        }
+        .btn{
+            margin-top: 130px;
+            margin-left: 40px;
+            height: 60px;
+            width: 200px;
+         background: transparent;
+         color: rgb(255, 255, 255);
+         font-family: sans-serif;
+         font-size: x-large;
+         border-radius: 40px;
+         box-shadow: 10px 10px 90px 20px rgb(0, 0, 0);
+         background-color: rgb(25, 72, 201);
+        }
+        .name{
+    
+           color: rgb(0, 158, 250);
+            height: 60px;
+            width: 150px;
+            margin-left: 60px;
+            padding: 70px 50px 20px 2px;
+        
+        
+        }
+    </style>
+</head>
+<body>
+     <div class="container">
+        <h1 class="name" id="kam"></h1>
+    <button  onclick="fun()" class="btn">Change me</button>
+    </div>
+    
+    <script>
+        var arr =["#e32636","#f0f8ff","#5d8aa8","#efdecd","#e52b50","#ffbf00","#ff033e","#9966cc","#f2f3f4",
+"#cd9575","#915c83","#faebd7","#00ffff","#fbceb1", "#4b5320","#e9d66b","#ff9966","#89cff0","#21abcd","#bcd4e6"
+]
+        function fun(){
+
+        
+
+        var ran=parseInt( Math.random()*arr.length);
+        document.body.style.backgroundColor=arr[ran]
+        document.getElementById('kam').innerHTML=arr[ran]
+        }
+        </script>
+</body>
+</html>
