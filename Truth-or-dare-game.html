@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or dare </title>
+    <style>
+        body {
+            background-color: rgb(74, 48, 219);
+            text-transform: capitalize;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .container {
+            background-color: rgb(255, 255, 255);
+            height: 400px;
+            width: 450px;
+            margin: 40px auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 80px 10px black;
+
+
+        }
+
+
+        h1 {
+            padding-left: 89px;
+            padding-top: 30px;
+        }
+
+        #quates {
+            padding-top: 20px;
+            padding-left: 25px;
+
+            font-size: 20px;
+        }
+
+        #quates::before {
+            content: '"   ';
+        }
+
+        #quates::after {
+            content: '     "';
+        }
+
+        .quates {
+            background-color: #ffffff;
+            border: 2px solid white;
+            height: 200px;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
+
+        }
+
+        button {
+            margin-left: 25%;
+            margin-top: 40px;
+            width: 200px;
+            height: 40px;
+            background: transparent;
+            color: rgb(0, 0, 0);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border-radius: 30px;
+            border-color: rgb(0, 0, 0);
+            border-style: ridge;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: large;
+        }
+      .t{
+        color: green;
+
+      }
+      .d{
+        color: red;
+      }
+      
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> <span class="t">Truth </span>  or <span class="d">Dare</span> </h1>
+        <div class="quates" id="dv">
+            <p id="quates">Kamlesh </p>
+        </div>
+
+        <button onclick="fun()" id="name">Click me</button>
+
+    </div>
+
+
+
+    <script>
+
+        var truth = [
+            " What is your biggest fear ?",
+            " What is the most embarrassing thing you’ve ever done ?",
+            " What’s a secret you’ve never told anyone ?",
+            " What is your biggest fantasy ?",
+            " When was the last time you cried ?",
+            " What is the biggest lie you’ve ever told ?", ,
+            " What is the most embarrassing photo of you ?",
+            " What would you do if you were the opposite gender for a week ?",
+            " What do most people assume about you that isn’t true ?",
+            "   What are your thoughts on reincarnation ?",
+            "   What is the stupidest thing you ever did as a teenager ?",
+            "   Have you ever broken the law ?",
+            "        What’s your biggest regret ?",
+            "     Who do you have a crush on ?",
+            "      What was the most awkward date you ever went on ?",
+            "       What is one item you hope nobody ever finds in your room ?",
+            "      Have you ever stolen something ?",
+            "       Have you ever cheated on an exam ?",
+            "     Tell the story of the drunkest you’ve ever been.",
+            "How old were you when you first tried alcohol ?",
+            " What is the silliest thing you feel emotionally attached to ?",
+            "   What is the biggest mistake you’ve ever made ?",
+            " Have you ever played hooky at work ?",
+            "     Have you ever lied to get out of an awkward date ?",
+            "      Who is the best - looking person here ?",
+            "   Who is the funniest person here ?",
+            "      What is the scariest nightmare you’ve ever had ?",
+            "       When was the most inappropriate time you farted in public ?",
+            "      What is the worst prank that someone played on you ?",
+            "      If you starred in a romance movie, what would it be like ?",
+            "      What is the most embarrassing thing you’ve posted on social media ?",
+            "      What is your favorite thing that your significant other does for you ?",
+            "       Tell us something you don’t want us to know.",
+            "What do you hope your parents never find out about ?",
+            "  What is the strangest dream you’ve ever had ?",
+            "   Who was the last person you searched on Instagram ?",
+            "   How old were you when you had your first kiss ?",
+            "   Who was your first kiss ?",
+            "    Why did you break up with your last boyfriend ?",
+            "    Have you ever shared a secret you weren’t supposed to tell ?",
+
+
+            "        What is the weirdest thing you’ve ever done in front of a mirror ?",
+            "            What was the last thing you searched for on your phone ?",
+            "      How often do you check yourself out in the reflection of a window ?",
+            "  What is the longest you’ve gone without a shower ?",
+            "  How long have you gone without brushing your teeth ?",
+            "   What celebrity would you hate to see naked ?",
+            "  Have you ever farted and blamed someone else?",
+            "Do you ever drool in your sleep ?",
+            " Do you snore ?",
+            "   What is your worst bad habit ?",
+            "  Have you ever peed in a pool ?",
+            "     Have you accidentally wet your pants as an adult ?",
+            "    Did your parents ever give you the “birds and bees” talk ?",
+            "      Do you ever pick your nose ?",
+            "      Would you rather have to walk around naked for a day or have your thoughts displayed as thought bubbles for everyone to read ?",
+            "   Do you talk in your sleep ?",
+            " What color underwear are you wearing right now ?",
+            "  Would you trade in your dog for a million dollars ?",
+            "  Have you ever been caught checking someone out ? How did they react ?",
+            "  What’s the longest you’ve ever spent in the bathroom ?",
+            "  How many selfies do you take per day ?",
+            "   Do you eat food off the floor ?",
+            "  Are you afraid of the dark ?",
+            " If you could reincarnate in someone else’s body, who would you want to become ?",
+            "       What is the most useless piece of knowledge you know ?",
+            "  If you run out of toilet paper, would you wipe with the empty roll ?",
+            "  If you could only say one swear word for the rest of your life, which one would you choose ?",
+            "  What animal most closely resembles your style of eating ?",
+
+
+
+
+        ]
+
+
+
+
+        var dare = [
+
+            "Yell out the first word that comes to your mind. ",
+            "Hold your nose while you sing the chorus of your favorite song.",
+            "Call your dad and say you got engaged. ",
+            "Dance for 30 seconds to a Snoop Dogg song.",
+            "Eat a whole raw clove of garlic.",
+            "Close your eyes until your next turn.",
+            "Take a shot. ",
+            "Hold three ice cubes in your mouth until they melt. ",
+            "Give a foot massage to the person on your right. ",
+            "Melt ice on the back of the person next to you.",
+            "Sing the lyrics to the Star Spangled Banner.",
+            "            Do 100 squats.",
+            "Show the most embarrassing photo on your phone.",
+            "Read the last 5 text messages on your phone. ",
+            "Try to lick your elbow.",
+            "Pretend to be the person to your left for the next 15 minutes.",
+            "Do your best impersonation of the person to your right.",
+            "Impersonate your favorite animal.",
+            "Crawl around the room.",
+            "Belly dance to Moroccan music. ",
+            "Try to put your whole hand in your mouth.",
+            "Empty your wallet or purse and show everybody what is inside.",
+            "Make the ugliest face you possibly can.",
+            "Do a cartwheel.",
+            "Post your oldest phone selfie as your Instagram story.",
+            " a 5 - minute makeover to the person on your right.",
+            "Howl like a wolf at the moon.",
+            "Curse like a sailor for 30 seconds straight. ",
+            "Do a magic trick.",
+            "Crack an egg between your hands.",
+            "       Jump in the shower with your clothes on. ",
+
+            " Send me your most recent picture in your photo reel.",
+            "Record yourself singing a song and post it in your social media story.",
+            "Message someone you haven’t talked to in a year and send me the screenshot.",
+            "Send your mom the text “you won’t believe what just happened” and share what she responds. ",
+            "Record yourself doing your makeup blindfolded.",
+            "Send a voice message of you singing Mariah Carey. ",
+            "Send a heart-eye emoji in response to your crush’s Instagram story. ",
+            "Send a photo of your cringest outfit.",
+            "Screenshot your browser history.",
+            "I dare you to order me $10 worth of food delivery.",
+            "Do a three-way prank call and let me listen.",
+            "Cut a piece of our hair.",
+            "Video yourself opening your windows and singing as loud as you can.",
+            "Brush your teeth with peanut butter and send a photo.",
+            "Text a random number a selfie.",
+            "Find the spiciest thing in your house and eat a whole spoonful.",
+            "Make a video of you making your weirdest personal habit.",
+            "Dress up like me and send a photo.",
+            "Change your profile picture to an unflattering photo for one day.",
+
+            "I dare you to order a pizza for the group.",
+            "Act like whatever animal someone yells out. ",
+            "Call a family member on your phone and sing a song chosen by the group. No talking allowed!",
+            "Do an interpretive dance of human life.",
+            "Give the person to your left a “wet willy.”",
+            "Pretend the person to your right is your girlfriend or boyfriend and beg them not to leave you.",
+            "Kiss the pet dog on the lips.",
+            "Get in the weirdest yoga pose you’ve ever done.",
+            "Hoola hoop for 10 minutes straight.",
+            "Make a cocktail for everyone in the group.",
+            "Do 50 pushups. ",
+            "Tell the funniest story of how you met someone in the group.",
+            "Jump as high as you can for one minute.",
+            "Smell someone’s armpit.",
+            "Do your favorite TikTok dance.",
+            "Talk in a British accent until your next turn.",
+            "Call your friend and sign them Happy Birthday. ",
+            "Prank call a friend or family member.",
+            "Do your best runway walk. ",
+            "Do the worm.",
+            "Try to touch your nose with your tongue. If you can’t, you have to touch another player’s nose with your tongue. ",
+
+            "Chug hot sauce for 30 seconds. ",
+            "Call a random number and pretend to be a different personality.",
+            "Put your head out the window like a dog while driving. ",
+            "Do the weirdest dance possible. ",
+            "Do a downward dog. ",
+            "Go on Facebook and like every photo of the first person you see. ",
+            "Fake cry.",
+            "Make out with your hand.",
+            "Do your best imitation of Britney Spears.",
+            "Do the Macarena.",
+            "Talk in the voice of the opposite gender for the rest of the game. ",
+            "Give a bear hug to the person to your right. ",
+            "Poke somebody random and walk away.",
+            "Attempt to breakdance. ",
+            "Blindfold yourself and take a drink of a beverage chosen by the group.",
+            "Pretend to be a ballerina.",
+            "Make up a rap.",
+            "Pet somebody as if they are a dog.",
+            "Show us the goofiest photo of you as a kid. ",
+
+            "ake an item out of the refrigerator and passionately kiss it.",
+            "Order Chinese takeout egg rolls for the group.",
+            "Drink a combination of ketchup, mustard, and a beverage. ",
+            "Lick whipped cream off of your significant other’s face. ",
+            "Go to the kitchen and make the most random snack possible with just 5 ingredients.",
+            "Balance a spoonful of mayo on your nose for 10 seconds.",
+            "Eat a spoonful of Sriracha ",
+            "Take a bite of a stick of butter.",
+            "Mix cereal, peanut butter, and pickles, then eat it.",
+            "Pretend you’re a bird and eat off your plate using only your mouth.",
+            "Eat a snack without using your hands.",
+            "Eat a mouthful of crackers and try to whistle.",
+            "Fill your mouth with water and try not to spit it out while the rest of the group cracks jokes.",
+            "Combine two foods that should never go together.",
+            "Pretend to be a waiter or waitress and take food orders from everyone in the group.",
+            "Grab 2 items from the refrigerator while blindfolded and eat them together. ",
+            "Take a shot of pickle juice.",
+            "Call Mcdonald’s and ask if they sell Whoppers.",
+            "Eat a mouthful of raw pasta.",
+            "Start a food fight.",
+            "Eat as much pizza as possible in 30 seconds (without hurting yourself).",
+            "Stain your teeth with berries or other bright-colored food.",
+            "Mix orange juice with milk, then drink it.",
+            "Chug a carbonated drink and burp as loud as possible. ",
+            "Pretend to call a restaurant and place the weirdest order you can come up with.",
+
+
+
+
+
+
+
+
+        ]
+
+
+
+
+
+
+
+        function fun() {
+            var t_d = parseInt(Math.random() * 4)
+           
+
+            if (t_d == 0) {
+                document.getElementById('name').innerHTML = "Dare"
+                document.getElementById('name').style.backgroundColor="#e32636";
+                document.getElementById('name').style.color="white"
+                document.getElementById('quates').style.color="red";
+                document.getElementById('dv').style.borderColor="green"
+                var index = parseInt(Math.random() * dare.length);
+                document.getElementById('quates').innerHTML=dare[index];
+               
+            }
+            else if (t_d == 1) {
+                document.getElementById('name').innerHTML = "Truth"
+                document.getElementById('name').style.backgroundColor="	#004225";
+                document.getElementById('name').style.color="white"
+                document.getElementById('quates').style.color="green";
+                document.getElementById('dv').style.borderColor="red"
+                var index = parseInt(Math.random() * truth.length);
+                document.getElementById('quates').innerHTML=truth[index];
+            }
+
+            else if (t_d == 2) {
+                document.getElementById('name').innerHTML = "Dare"
+                document.getElementById('name').style.backgroundColor="#e32636";
+                document.getElementById('name').style.color="white"
+                document.getElementById('quates').style.color="red";
+                document.getElementById('dv').style.borderColor="green"
+                var index = parseInt(Math.random() * dare.length);
+                document.getElementById('quates').innerHTML=dare[index];
+            }
+            else {
+                document.getElementById('name').innerHTML = "Truth"
+                document.getElementById('quates').style.color="green";
+                document.getElementById('dv').style.borderColor="red"
+                document.getElementById('name').style.backgroundColor="	#004225";
+                document.getElementById('name').style.color="white"
+                var index = parseInt(Math.random() * truth.length);
+                document.getElementById('quates').innerHTML=truth[index];
+            }
+        }
+    </script>
+
+</body>
+
+</html>
