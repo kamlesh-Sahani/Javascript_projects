@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        text-transform: capitalize;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #eee;
+    }
+
+    h1 {
+        text-align: center;
+        color: rgb(21, 63, 250);
+    }
+
+    .main {
+        display: flex;
+
+    }
+
+    .main h2 {
+        margin-left: 250px;
+    }
+
+    .value h3 {
+        margin-left: 210px;
+        color: red;
+    }
+
+    .value {
+        display: flex;
+        margin-top: 30px;
+        padding: 10px;
+    }
+
+    #vs {
+        font-size: 30px;
+    }
+    .rules{
+   margin-top:150px ;
+   color: orangered;
+    }
+</style>
+
+<body>
+    <h1> snake water and gun game </h1>
+    <div class="container">
+        <div class="main">
+            <h2>commputer</h2>
+            <h2>user</h2>
+        </div>
+        <div class="value">
+            <h3 id="comp">g</h3>
+            <h3 id="vs">VS</h3>
+            <h3 id="user">df</h3>
+        </div>
+    
+    </div>
+    <h1 id="result"></h1>
+    <div class="rules">
+        <h2>Water vs Gun = Water is winner</h2>
+        <h2>water vs snake = Sanke is wanner</h2>
+        <h2>sanke vs Gun = Gun is winner</h2>
+             </div>
+    <script>
+
+        var user= window.prompt("play-- select one","Gun , water,  snake")
+        var comp = Math.floor( (Math.random() * 3))
+        if (comp == 0) {
+            comp = "gun"
+            document.getElementById('comp').innerHTML = "Gun"
+        }
+
+        else if (comp == 1) {
+            comp = "water";
+            document.getElementById('comp').innerHTML = "Water"
+
+        }
+        else {
+            comp = "snake";
+            document.getElementById('comp').innerHTML = "Snake"
+        }
+
+
+        if (user == "gun") {
+            document.getElementById('user').innerHTML = "Gun"
+        }
+
+        else if (user == "water") {
+            document.getElementById('user').innerHTML = "Water"
+
+        }
+        else {
+            document.getElementById('user').innerHTML = "Snake"
+        }
+        
+
+
+        fun(user, comp);
+
+        function fun(user, comp) {
+            if (user == "snake") {
+                if (comp == "snake") {
+                    document.getElementById('result').innerHTML = "match draw try agin (page refresh...)"
+                }
+                else if(comp == "water") {
+                    document.getElementById('result').innerHTML = "conguratualtion you win"
+                }
+               else {
+                    document.getElementById('result').innerHTML = "you loose the game"
+                }
+            }
+            else if (user == "water") {
+                if (comp == "snake"){
+                    document.getElementById('result').innerHTML =  "you loose the game"
+                }
+
+                else if   (comp == "water") {
+                    document.getElementById('result').innerHTML = "match draw try agin (page refresh...)"
+                }
+                else{
+                    document.getElementById('result').innerHTML =  "conguratualtion you win"
+                }
+            }
+
+
+            else {
+                if (comp == "snake") {
+                    document.getElementById('result').innerHTML = "conguratulation you winner"
+                }
+                else if (comp == "water") {
+                    document.getElementById('result').innerHTML ="you loose the game"
+                }
+                else {
+                    document.getElementById('result').innerHTML = "math draw try again"
+                }
+            }
+        }
+      
+        
+    </script>
+</body>
+
+</html>
