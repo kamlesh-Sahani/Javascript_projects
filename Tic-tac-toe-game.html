@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tictac</title>
+    <style>
+        body {
+            text-transform: capitalize;
+            background-color: rgb(44, 111, 255);
+        }
+
+        .container {
+            height: 600px;
+            width: 500px;
+            background-color: white;
+            margin: 5vh auto;
+            border-radius: 10px;
+        }
+
+        .head span:first-child {
+            color: orangered;
+
+        }
+
+        .head span:last-child {
+            color: orangered;
+        }
+
+        h1 {
+            font-size: 40px;
+            margin-left: 30%;
+            padding-top: 20px;
+            font-weight: 700;
+        }
+
+        h3 {
+
+            padding-left: 20%;
+            font-size: 40px;
+        }
+
+        #win {
+            color: red;
+        }
+
+        hr {
+            height: 3px;
+            background-color: rgba(19, 104, 202, 0.925);
+            width: 80%;
+        }
+
+        .box {
+            height: 320px;
+            width: 400px;
+            margin-left: 50px;
+        }
+
+        .box div {
+            background-color: rgb(83, 165, 212);
+            width: 130px;
+            height: 100px;
+            display: inline-block;
+            margin-top: 5px;
+
+        }
+
+        .box div h1 {
+            font-size: 70px;
+            margin-top: 0;
+            color: white;
+            font-style: italic;
+        }
+
+        button {
+            width: 300px;
+            height: 60px;
+            border-radius: 20px;
+            margin-left: 90px;
+            margin-top: 5px;
+            font-size: x-large;
+            background-color: rgb(26, 126, 219);
+            color: white;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="head"><span>Tic</span> <span>Tac</span> <span>toe</span></h1>
+        <h3> player <span id="win"></span> is win</h3>
+        <hr>
+        <div class="box">
+            <div onclick="fun()">
+                <h1 id="i">.</h1>
+            </div>
+            <div onclick="fun1()">
+                <h1 id="i1">.</h1>
+            </div>
+            <div onclick=" fun2()">
+                <h1 id="i2">.</h1>
+            </div>
+            <div onclick=" fun3()">
+                <h1 id="i3"> .</h1>
+            </div>
+            <div onclick=" fun4()">
+                <h1 id="i4">.</h1>
+            </div>
+            <div onclick=" fun5()">
+                <h1 id="i5">.</h1>
+            </div>
+            <div onclick=" fun6()">
+                <h1 id="i6">.</h1>
+            </div>
+            <div onclick=" fun7()">
+                <h1 id="i7">.</h1>
+            </div>
+            <div onclick=" fun8()">
+                <h1 id="i8">.</h1>
+            </div>
+        </div>
+
+        <button onclick="window.location.reload()">Again</button>
+    </div>
+    <script>
+        var count = 2;
+        var i = 0;
+        var i1 = 0;
+        var i2 = 0;
+        var i3 = 0;
+        var i4 = 0;
+        var i5 = 0;
+        var i6 = 0;
+        var i7 = 0;
+        var i8 = 0;
+
+        function fun() {
+            if (count % 2 == 0) {
+                if (i == 0) {
+                    document.getElementById('i').innerHTML = "X";
+                    i = 1;
+                    count = 1;
+                    jack('X', 0)
+
+                }
+            }
+            else {
+                if (i == 0) {
+                    document.getElementById('i').innerHTML = "O";
+                    document.getElementById('i').style.color = "red";
+                    var a1 = "O"
+                    count = 2;
+                    i = 1;
+                    jack('O', 0)
+                }
+            }
+        }
+        function fun1() {
+            if (count % 2 == 0) {
+                if (i1 == 0) {
+                    document.getElementById('i1').innerHTML = "X";
+                    count = 1;
+                    i1 = 1;
+                    jack('X', 1)
+                }
+            }
+            else {
+                if (i1 == 0) {
+                    document.getElementById('i1').innerHTML = "O";
+                    document.getElementById('i1').style.color = "red";
+                    count = 2;
+                    i1 = 1;
+                    jack('O', 1)
+                }
+            }
+        }
+        function fun2() {
+            if (count % 2 == 0) {
+                if (i2 == 0) {
+                    document.getElementById('i2').innerHTML = "X";
+                    count = 1;
+                    i2 = 1;
+                    jack('X', 2)
+                }
+            }
+            else {
+                if (i2 == 0) {
+                    document.getElementById('i2').innerHTML = "O";
+                    document.getElementById('i2').style.color = "red";
+                    count = 2;
+                    i2 = 1;
+                    jack('O', 2)
+                }
+            }
+        }
+        function fun3() {
+            if (count % 2 == 0) {
+                if (i3 == 0) {
+                    document.getElementById('i3').innerHTML = "X";
+                    count = 1;
+                    i3 = 1;
+                    jack('X', 3)
+                }
+
+
+            }
+            else {
+                if (i3 == 0) {
+                    document.getElementById('i3').innerHTML = "O";
+                    document.getElementById('i3').style.color = "red";
+                    count = 2;
+                    i3 = 1;
+                    jack('O', 3)
+
+                }
+            }
+        }
+        function fun4() {
+            if (count % 2 == 0) {
+                if (i4 == 0) {
+                    document.getElementById('i4').innerHTML = "X";
+                    count = 1;
+                    i4 = 1;
+                    jack('X', 4)
+
+                }
+
+            }
+            else {
+                if (i4 == 0) {
+                    document.getElementById('i4').innerHTML = "O";
+                    document.getElementById('i4').style.color = "red";
+                    count = 2;
+                    i4 = 1;
+                    jack('O', 4)
+                }
+            }
+        }
+        function fun5() {
+            if (count % 2 == 0) {
+                if (i5 == 0) {
+                    document.getElementById('i5').innerHTML = "X";
+                    count = 1;
+                    i5 = 1;
+                    jack('X', 5)
+                }
+
+            }
+            else {
+                if (i5 == 0) {
+                    document.getElementById('i5').innerHTML = "O";
+                    document.getElementById('i5').style.color = "red";
+                    count = 2;
+                    i5 = 1;
+                    jack('O', 5)
+                }
+            }
+        }
+        function fun6() {
+            if (count % 2 == 0) {
+                if (i6 == 0) {
+                    document.getElementById('i6').innerHTML = "X";
+                    count = 1;
+                    i6 = 1;
+                    jack('X', 6)
+                }
+
+            }
+            else {
+                if (i6 == 0) {
+                    document.getElementById('i6').innerHTML = "O";
+                    document.getElementById('i6').style.color = "red";
+                    count = 2;
+                    i6 = 1;
+                    jack('O', 6)
+                }
+            }
+        }
+        function fun7() {
+            if (count % 2 == 0) {
+                if (i7 == 0) {
+                    document.getElementById('i7').innerHTML = "X";
+                    count = 1;
+                    i7 = 1;
+                    jack('X', 7)
+                }
+
+            }
+            else {
+                if (i7 == 0) {
+                    document.getElementById('i7').innerHTML = "O";
+                    document.getElementById('i7').style.color = "red";
+                    count = 2;
+                    i7 == 1;
+                    jack('O', 7)
+                }
+            }
+        }
+        function fun8() {
+            if (count % 2 == 0) {
+                if (i8 == 0) {
+                    document.getElementById('i8').innerHTML = "X";
+                    count = 1;
+                    i8 = 1;
+                    jack('X', 8)
+                }
+
+            }
+            else {
+                if (i8 == 0) {
+                    document.getElementById('i8').innerHTML = "O";
+                    document.getElementById('i8').style.color = "red";
+                    count = 2;
+                    i8 = 1;
+                    jack('O', 8)
+                }
+            }
+        }
+        var kamlesh = [1, 2, 3, 4, 5, 6, 7, 8]
+        var check = []
+        function jack(kam, index) {
+            kamlesh[index] = kam;
+            check.push(kam)
+            kk()
+            console.log(kamlesh)
+
+        }
+        function kk() {
+            if (kamlesh[0] == kamlesh[1] && kamlesh[1] == kamlesh[2]) {
+                if (kamlesh[0] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else if (kamlesh[3] == kamlesh[4] && kamlesh[4] == kamlesh[5]) {
+                if (kamlesh[3] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else if (kamlesh[6] == kamlesh[7] && kamlesh[7] == kamlesh[8]) {
+                if (kamlesh[6] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else if (kamlesh[0] == kamlesh[3] && kamlesh[3] == kamlesh[6]) {
+                if (kamlesh[0] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else if (kamlesh[1] == kamlesh[4] && kamlesh[4] == kamlesh[7]) {
+                if (kamlesh[1] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else if (kamlesh[2] == kamlesh[5] && kamlesh[5] == kamlesh[8]) {
+                if (kamlesh[2] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else if (kamlesh[0] == kamlesh[4] && kamlesh[4] == kamlesh[8]) {
+                if (kamlesh[0] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else if (kamlesh[2] == kamlesh[4] && kamlesh[4] == kamlesh[6]) {
+                if (kamlesh[2] == "X") {
+                    document.getElementById('win').innerHTML = "X"
+                    clear()
+                }
+                else {
+                    document.getElementById('win').innerHTML = "O"
+                    clear()
+                }
+            }
+            else {
+                if (check.length == 9) {
+                    document.getElementById('win').innerHTML = "Draw"
+                    console.log(kamlesh.length)
+                    console.log(kamlesh)
+                }
+            }
+        }
+
+        function clear() {
+            document.getElementById('i').innerHTML = "."
+            document.getElementById('i1').innerHTML = "."
+            document.getElementById('i2').innerHTML = "."
+            document.getElementById('i3').innerHTML = "."
+            document.getElementById('i4').innerHTML = "."
+            document.getElementById('i5').innerHTML = "."
+            document.getElementById('i6').innerHTML = "."
+            document.getElementById('i7').innerHTML = "."
+            document.getElementById('i8').innerHTML = "."
+         
+        }
+    </script>
+</body>
+
+</html>
