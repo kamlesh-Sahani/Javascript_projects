@@ -31,13 +31,13 @@ This repository contains a series of mini JavaScript projects. Each project demo
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/mini-js-projects.git
+   git clone https://github.com/kamlesh-Sahani/Javascript_projects.git
    ```
    
 2. **Navigate to the Project Folder:**
    Change to the directory containing the HTML files:
    ```bash
-   cd mini-js-projects
+   cd Javascript_projects
    ```
 
 3. **Open a Project:**
